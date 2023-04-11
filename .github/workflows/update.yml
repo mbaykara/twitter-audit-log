@@ -2,6 +2,15 @@ name: Collect twitter data
 on:
   schedule:
     - cron: "50 21 * * *"
+  workflow_dispatch:
+    inputs:
+      manuell:
+        description: 'Trigger'
+        default: 'trigger'
+        type: choice
+        options:
+        - trigger
+        
 defaults:
   run:
     working-directory: ./tool
